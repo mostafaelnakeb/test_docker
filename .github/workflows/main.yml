@@ -11,9 +11,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
+      - name: Get version
+        id: vars
+        run: pwd; ls -la
+      
       - name: Build an image from Dockerfile
         run: |
           docker build --tag app --file Dokerfile .
+      - name: Get version
+        id: vars1
+        run: pwd; ls -la
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
