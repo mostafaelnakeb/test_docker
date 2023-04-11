@@ -17,7 +17,7 @@ jobs:
       
       - name: Build an image from Dockerfile
         run: |
-          docker build --tag app --file Dokerfile .
+          docker build --tag app --file Dokerfile
       - name: Get version
         id: vars1
         run: pwd; ls -la
